@@ -35,3 +35,4 @@ Before you start, ensure you have the following:
 - TMDb API Key: Obtain your API key by creating an account on the [TMDb website](https://www.themoviedb.org/) and following their instructions to generate an API key.
 
 ![Screenshot_20231110_135954](https://github.com/Pranshu-Pandey/Movie_app/assets/89621700/4ba1a2d3-9386-44dd-bff6-ceda4747df3f)
+![Screenshot_20231110_140011](https://github.com/Pranshu-Pandey/Movie_app/assets/89621700/ea99c043-2745-4a98-97d3-852e667c1092)
