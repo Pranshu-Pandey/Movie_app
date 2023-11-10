@@ -1,0 +1,52 @@
+import 'package:flutter/material.dart';
+import 'package:movie_app/screens/details_screen.dart';
+import 'package:movie_app/widgets/constants.dart';
+
+class Upcomming extends StatelessWidget {
+  const Upcomming({
+    super.key,
+    required this.snapshot,
+  });
+
+  final AsyncSnapshot snapshot;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 200,
+      width: double.infinity,
+      child: ListView.builder(
+        itemCount: snapshot.data.length,
+        itemBuilder: (context, index) {
+          return Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        DetailsScreen(movie: snapshot.data[index]),
+                  ),
+                );
+              },
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                child: SizedBox(
+                  child: Image.network(
+                      filterQuality: FilterQuality.high,
+                      fit: BoxFit.cover,
+                      '${constants.imagePath}${snapshot.data[index].poster_path}'),
+                  height: 200,
+                  width: 150,
+                ),
+              ),
+            ),
+          );
+        },
+        scrollDirection: Axis.horizontal,
+        physics: BouncingScrollPhysics(),
+      ),
+    );
+  }
+}
